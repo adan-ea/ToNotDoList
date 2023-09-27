@@ -1,0 +1,24 @@
+<div class="container">
+    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 512 512"><style>svg{fill:#FF9900}</style><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+    <h1>My ToDoList</h1>
+    <ul>
+        <li *ngFor="let element of list">
+            <div class="row">
+                <div class="col-lg-1">
+                    <input class="checkbox" type="checkbox">
+                </div>
+                <div class="col-lg-5">
+                    <p class="first">{{element.title}}</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>{{element.date}}</p>
+                </div>
+                <div class="col-lg-2">
+                    <i *ngIf="element.priority === 'high'" class="icon-high">!</i> 
+                    <i *ngIf="element.priority === 'middle'" class="icon-middle">!</i>
+                    <i *ngIf="element.priority === 'low'"></i> 
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
